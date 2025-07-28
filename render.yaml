@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: crypto-listing-bot
+    runtime: python
+    env: production
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "python main.py"
+    envVars:
+      - key: BOT_TOKEN
+        value: {{ BOT_TOKEN }}
+      - key: CHAT_ID
+        value: {{ CHAT_ID }}
+      - key: CHECK_INTERVAL
+        value: 300
+      - key: DAILY_DIGEST_HOUR
+        value: 8
